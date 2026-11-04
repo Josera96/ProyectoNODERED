@@ -42,7 +42,8 @@
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "darkTheme": {
                 "default": "#097479",
@@ -150,7 +151,8 @@
         "y": 240,
         "wires": [
             [
-                "7cbb8418d8e9bc5d"
+                "7cbb8418d8e9bc5d",
+                "ec267095b2cd14d7"
             ]
         ]
     },
@@ -211,6 +213,48 @@
         "color": "#0000ff",
         "x": 720,
         "y": 240,
+        "wires": []
+    },
+    {
+        "id": "ec267095b2cd14d7",
+        "type": "function",
+        "z": "2e55dc8684909810",
+        "name": "function 1",
+        "func": "msg.payload = Math.floor ( Math.random ( ) * 6 ) + 1;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 300,
+        "wires": [
+            [
+                "c586f73dcedddde5",
+                "5497493d3f233874"
+            ]
+        ]
+    },
+    {
+        "id": "5497493d3f233874",
+        "type": "ui_text",
+        "z": "2e55dc8684909810",
+        "group": "grupo_dado",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Resultado Visual",
+        "label": "Resultado del Lanzamiento",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 730,
+        "y": 300,
         "wires": []
     }
 ]
