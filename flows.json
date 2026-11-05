@@ -151,7 +151,8 @@
         "y": 240,
         "wires": [
             [
-                "7cbb8418d8e9bc5d"
+                "7cbb8418d8e9bc5d",
+                "d2e54cd590e97870"
             ]
         ]
     },
@@ -212,6 +213,48 @@
         "color": "#0000ff",
         "x": 720,
         "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d2e54cd590e97870",
+        "type": "function",
+        "z": "2e55dc8684909810",
+        "name": "function 1",
+        "func": "msg.payload = Math.floor(Math.random() * 6) + 1;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 300,
+        "wires": [
+            [
+                "c586f73dcedddde5",
+                "e2456f6dd2433e33"
+            ]
+        ]
+    },
+    {
+        "id": "e2456f6dd2433e33",
+        "type": "ui_text",
+        "z": "2e55dc8684909810",
+        "group": "grupo_dado",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Resultado Visual",
+        "label": "Resultado de Lanzamiento",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 710,
+        "y": 300,
         "wires": []
     }
 ]
